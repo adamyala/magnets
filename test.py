@@ -4,7 +4,7 @@ import operator
 
 def string_builder(genre):
     words = []
-    for root, dirs, files in os.walk('./' + genre):
+    for root, dirs, files in os.walk('./lyrics/' + genre):
         for file in files:
             if file.endswith('.txt'):
                 for line in open(os.path.join(root, file)):
@@ -22,7 +22,8 @@ def string_builder(genre):
         'to', 'am', 'of', 'for', 'it',
         'our', 'can', 'as', 'that', 'was',
         'i', 'you', 'me', '', 'are', 'im',
-        'your', 'but', 'so', 'dont', 'cant'
+        'your', 'but', 'so', 'dont', 'cant',
+        'with', 'not', 'this'
     ]
     for removal in removals:
         try:
@@ -34,5 +35,10 @@ def string_builder(genre):
 
     return sorted_counts
 
-print (string_builder('black_metal'))
-print (string_builder('christian'))
+# print (string_builder('black_metal'))
+# print (string_builder('christian'))
+# print (string_builder('icp'))
+
+import nltk
+
+nltk.download()
